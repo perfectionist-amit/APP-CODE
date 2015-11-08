@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!-- CSP support mode (required for Windows Universal apps): https://docs.angularjs.org/api/ng/directive/ngCsp -->
+<html lang="en" ng-app="dealApp" ng-csp>
+<head>
+    <meta charset="utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- JS dependencies (order matters!) -->
+    <script src="scripts/platformOverrides.js"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/onsen/js/onsenui.min.js"></script>
+    <script src="lib/angular-local-storage/angular-local-storage.min.js"></script>
+    <script src="lib/angular-translate/angular-translate.min.js"></script>
+    <script src="lib/lodash/lodash.min.js"></script>
+    <script src="lib/angular-google-maps/angular-google-maps.min.js"></script>
+
+    <!-- CSS dependencies -->
+    <link rel="stylesheet" href="lib/onsen/css/onsenui.css" />
+    <link rel="stylesheet" href="lib/onsen/css/onsen-css-components-blue-basic-theme.css" />
+
+    <!-- CSP support mode (required for Windows Universal apps) -->
+    <link rel="stylesheet" href="lib/angular/angular-csp.css" />
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <!-- --------------- App init --------------- -->
+
+    <title>Collivr</title>
+
+    <style>
+        .login-form {
+          text-align: center;
+          width: 80%;
+          margin: 60px auto 0;
+        }
+
+        input[type=email], input[type=password] {
+          display: block;
+          width: 100%;
+          margin: 0 auto;
+          outline: none;
+          padding-top: 24px;
+          padding-bottom: 24px;
+        }
+
+        .login-button {
+          width: 100%;
+          margin: 0 auto;
+        }
+
+        .forgot-password {
+          display: block;
+          margin: 8px auto 0 auto;
+          font-size: 14px;
+          background: none;
+        }
+        .navigation-bar, .list {
+          border-bottom: 1px solid #ddd;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Cordova reference -->
+    <script src="cordova.js"></script>
+    <script src="scripts/index.js"></script>
+    
+    <script src="scripts/config/configHTTP.js"></script>
+    <script src="scripts/config/configLocalStorage.js"></script>
+    <script src="scripts/config/configTranslate.js"></script>
+
+    <script src="scripts/services/globalServices.js"></script>
+
+    <script src="scripts/controllers/loginCtrl.js"></script>
+    <script src="scripts/controllers/campaignsCtrl.js"></script>
+    <script src="scripts/controllers/campaignDetailCtrl.js"></script>
+    <script src="scripts/controllers/collivrCtrl.js"></script>
+    <script src="scripts/controllers/contactsCtrl.js"></script>
+    <script src="scripts/controllers/contactDetailCtrl.js"></script>
+    <script src="scripts/controllers/settingCtrl.js"></script>
+    <!-- -->
+
+    <ons-modal var="app.scaBusy">
+      <ons-icon icon="ion-load-c" spin="true"></ons-icon>
+    </ons-modal>
+
+    <ons-navigator var="navController" page="html/login.html">
+</ons-navigator>
+
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<ons-page ng-controller="campaignsCtrl">
+
+    <ons-toolbar fixed-style>
+        <div class="center">{{'rsCampaigns' | translate }}</div>
+    </ons-toolbar>
+
+	<ons-pull-hook var="loader" ng-action="reloadCampaigns($done)">
+		<span ng-switch="loader.getCurrentState()">
+			<span ng-switch-when="initial">Pull down to refresh</span>
+			<span ng-switch-when="preaction">Release to refresh</span>
+			<span ng-switch-when="action">Loading...</span>
+		</span>
+	</ons-pull-hook>
+
+    <ons-list>
+        <ons-list-item modifier="chevron" ng-repeat="campaign in campaigns" ng-click="onCampaign(campaign.campaign_data.id)">
+            <div class="prop-desc">{{campaign.campaign_data.title}}</div>
+            <span class="desc">{{campaign.campaign_data.description}}</span>
+        </ons-list-item>
+    </ons-list>
+
+	<div class="content-fill" ng-if="campaigns && campaigns.length == 0">
+		<div class="content-center"> No Campaigns Found</div>
+	</div>
+    
+</ons-page>

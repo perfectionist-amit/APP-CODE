@@ -1,0 +1,45 @@
+<ons-page ng-controller="collivrCtrl">
+        
+    <ons-toolbar fixed-style>
+        <div class="left"><ons-back-button>{{'rsBack' | translate }}</ons-back-button></div>
+        <div class="center">{{campaign.campaign_data.title}}</div>
+    </ons-toolbar>
+
+    <ons-list modifier="inset" style="margin-top: 10px">
+        <ons-list-item>
+            <input type="text" class="text-input text-input--transparent" placeholder="Email" style="width: 100%" ng-model="user.email">
+        </ons-list-item>    
+    </ons-list>
+    
+    <ons-list modifier="inset" style="margin-top: 10px">
+        <ons-list-item>
+            <input type="text" class="text-input text-input--transparent" placeholder="Firstname" style="width: 100%" ng-model="user.firstname">
+        </ons-list-item>
+        <ons-list-item>
+            <input type="text" class="text-input text-input--transparent" placeholder="Lastname" style="width: 100%" ng-model="user.lastname">
+        </ons-list-item>        
+        <ons-list-item>
+            <input type="text" class="text-input text-input--transparent" placeholder="Phone" style="width: 100%" ng-model="user.phone">
+        </ons-list-item>
+    </ons-list>
+    
+    <ons-list modifier="inset" style="margin-top: 10px">
+        <ons-list-header>{{'rsMessages' | translate }}</ons-list-header>
+
+        <ons-list-item modifier="tappable" ng-repeat="message in campaign.email_data" ng-click="toggleMessage($event, $index)">
+          <label class="checkbox checkbox--noborder checkbox--list-item">
+            <!-- <input type="checkbox" checked="checked"> -->
+            <input type="checkbox" class="item-message-{{$index}}" ng-model="checkboxModel[$index]">
+            <div class="checkbox__checkmark checkbox--noborder__checkmark checkbox--list-item__checkmark"></div>
+            {{message.emailsubject}}
+          </label>
+        </ons-list-item>
+
+    </ons-list>    
+    <div style="padding: 10px 9px">
+        <ons-button modifier="large" style="margin: 0 auto;" ng-click="onSend();">
+            {{'rsSend' | translate }}
+        </ons-button>
+    </div>
+      
+</ons-page>

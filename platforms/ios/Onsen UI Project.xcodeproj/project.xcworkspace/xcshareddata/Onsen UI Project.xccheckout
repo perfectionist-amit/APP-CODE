@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>84B71641-CC0C-451A-9969-0A234DFCF943</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Onsen UI Project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>5c1c2bbd-b27f-416a-8c8c-f80eb9aa003b</key>
+		<string>http://104.236.48.98/svn/leadcapture</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>cordova/Deals4U/platforms/ios/Onsen UI Project.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>5c1c2bbd-b27f-416a-8c8c-f80eb9aa003b</key>
+		<string>../../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>5c1c2bbd-b27f-416a-8c8c-f80eb9aa003b</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5c1c2bbd-b27f-416a-8c8c-f80eb9aa003b</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Project</string>
+		</dict>
+	</array>
+</dict>
+</plist>

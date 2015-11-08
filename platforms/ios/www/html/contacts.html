@@ -1,0 +1,34 @@
+<ons-page ng-controller="contactsCtrl">
+    
+    <ons-toolbar fixed-style>
+        <div class="center">{{'rsContacts' | translate}}</div>
+    </ons-toolbar>
+    <!-- <ons-pull-hook var="loader" ng-action="reloadContacts($done)">
+        <span ng-switch="loader.getCurrentState()">
+            <span ng-switch-when="initial">Pull down to refresh</span>
+            <span ng-switch-when="preaction">Release to refresh</span>
+            <span ng-switch-when="action">Loading...</span>
+        </span>
+    </ons-pull-hook> -->
+
+    <div class="navigation-bar">
+        <div class="navigation-bar__center">
+            <input type="search" class="search-input" style="width: 96%; margin: 6px auto 6px auto;" placeholder="Search" ng-model="contactKeyword">
+        </div>
+    </div>
+
+    <!-- <ons-list class="person-list">  -->
+        <!-- <ons-list-header class="person-list-header">{{char}}</ons-list-header> -->
+<!--         <ons-list-item class="person" modifier="tappable chevron" ng-repeat="contact in contacts" ng-click="onContact(contact.lead_id)">
+            {{contact.fname}} {{contact.lname}}
+        </ons-list-item>
+    </ons-list>-->
+
+    <ons-list class="person-list" ng-repeat="char in nameFirstChars">
+        <ons-list-header class="person-list-header" ng-show="!contactKeyword">{{char}}</ons-list-header>
+        <ons-list-item class="person" modifier="tappable chevron" ng-repeat="contact in contactsClassified[char] | filter:contactKeyword" ng-click="onContact(contact.lead_id)">
+            {{contact.fname}} {{contact.lname}}
+        </ons-list-item>
+    </ons-list>
+
+</ons-page>

@@ -1,0 +1,24 @@
+<ons-page ng-controller="campaignDetailCtrl">
+    
+    <ons-toolbar fixed-style>
+        <div class="left"><ons-back-button>{{'rsBack' | translate }}</ons-back-button></div>
+        <div class="center">{{campaign.campaign_data.title}}</div>
+    </ons-toolbar>
+
+    <div style="padding: 10px 9px">
+        <p><strong>{{'rsDescription' | translate }}</strong></p>
+        <p>{{campaign.campaign_data.description}}</p>
+    </div>
+
+    <ons-list modifier="inset">
+        <ons-list-header>{{'rsMessages' | translate }}</ons-list-header>
+        <ons-list-item ng-repeat="message in campaign.email_data">{{message.emailsubject}}</ons-list-item>
+    </ons-list>
+    
+    <div style="padding: 10px 9px">
+        <ons-button modifier="large" style="margin: 0 auto;" ng-click="onCollivr()">
+          {{'rsCollivr' | translate }}
+        </ons-button>
+    </div>    
+    
+</ons-page>    

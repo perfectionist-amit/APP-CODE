@@ -1,0 +1,15 @@
+
+<ons-page ng-controller="loginCtrl">
+
+  <div class="login-form">
+    <h2>{{'rsCollivr' | translate}}</h2>
+    <input type="text" style="width:100%;" class="text-input--underbar" placeholder="{{'rsEmail' | translate}}" ng-model="user.email">
+    <input type="password" class="text-input--underbar" placeholder="{{'rsPassword' | translate}}" ng-model="user.password">
+    <br><br>
+    <ons-button modifier="large" class="login-button" ng-click="onLogin()">{{'rsLogin' | translate}}</ons-button>
+    <br>
+    <ons-button modifier="quiet" class="forgot-password" ng-click="onForgotPassword()">{{'rsForgotPwd' | translate}}</ons-button>
+  </div>
+  
+
+</ons-page>

@@ -1,0 +1,56 @@
+<style>
+    .angular-google-map-container {
+        height:300px;
+    }
+</style>
+<ons-page ng-controller="contactDetailCtrl">
+    
+    <ons-toolbar fixed-style>
+        <div class="left"><ons-back-button>{{'rsBack' | translate }}</ons-back-button></div>
+        <div class="center">{{contact.name}}</div>
+    </ons-toolbar>
+    
+    <!-- <div class="google-maps">
+        <img src="assets/gmap.jpg" alt="" class="dummy" />
+    </div> -->
+
+    <ui-gmap-google-map center='map.center'
+                        zoom='map.zoom'
+                        options="map.options">
+
+        <ui-gmap-marker coords="marker.center" options="marker.options" idkey="0" ng-repeat="marker in markers"></ui-gmap-marker>
+    </ui-gmap-google-map>
+    
+    <ons-list>
+        <ons-list-item>
+            <ons-row>
+                <ons-col class="info-col">
+                    <div class="info-num">{{contact.email_count}}</div>
+                    <div class="info-unit">{{'rsMessages' | translate }}</div>
+                </ons-col>
+                <ons-col class="info-col">
+                    <div class="info-num">{{contact.location_count}}</div>
+                    <div class="info-unit">{{'rsLocations' | translate }}</div>
+                </ons-col>
+                <ons-col class="info-col">
+                    <div class="info-num">{{contact.collivr ? contact.collivr : 0}} days ago</div>
+                    <div class="info-unit">{{'rsCollivred' | translate }}</div>
+                </ons-col>
+            </ons-row>
+        </ons-list-item>
+    </ons-list>    
+    
+    <ons-list modifier="inset" style="margin-top: 10px">
+        <ons-list-item>
+            <ons-icon icon="fa-envelope" class="collivr"></ons-icon>
+            {{contact.email}}
+        </ons-list-item>
+    
+        <ons-list-item>
+            <ons-icon icon="fa-phone" class="collivr"></ons-icon>
+            {{contact.phone}}
+        </ons-list-item>
+    
+    </ons-list>
+    
+</ons-page>
